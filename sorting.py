@@ -199,7 +199,7 @@ def getDistance(user_address, restaurant, geo, dists):
     lng1 = float(geo[user_address].split(" ")[1])
     lng2 = float(geo[restaurant["restaurant_address"]].split(" ")[1])
     dist = 7912 * math.asin(math.sqrt(math.sin((lat2 - lat1) / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin((lng2 - lng1) / 2) ** 2))
-    return round(dist, 1)
+    return round(dist, 3)
 
 def addGeo(address, geo):
     # Get the latitudes and longitudes from the API and add them to the dictionary of coordinates
