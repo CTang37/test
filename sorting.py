@@ -23,7 +23,10 @@ def main(tag=None, sort_method="location", ascending=None, data_list=None, user_
         geo = dict()
 
     # Add the coordinates of the user address
-    addGeo(user_address, geo)
+    if user_address == "100 Morrissey Blvd, Boston, MA 02125,":
+        geo[user_address] = "42.316277 -71.048198"
+    else:
+        addGeo(user_address, geo)
 
     if tag is not None: #sort by tag based on what is passed in
         tag = str(tag).lower() #makes sure the tag is lowercase
